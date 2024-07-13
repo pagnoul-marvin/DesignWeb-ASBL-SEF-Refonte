@@ -117,7 +117,7 @@
 
 </footer>
 
-<div id="progress_bar"></div>
+<div id="progress_bar" class="progress_bar"></div>
 
 </body>
 
