@@ -1,0 +1,26 @@
+*
+*.xd
+*.ai
+*.png
+*.jpeg
+*.jpg
+*.avif
+*.webp
+
+
+!Adobe Illustrator
+!Adobe Illustrator/*.ai
+
+
+!Adobe XD
+!Adobe XD/*
+!Adobe XD/*.xd
+!Adobe XD/images moodboard/*
+
+!.gitignore
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/sef
+!wp-content/themes/sef/*
