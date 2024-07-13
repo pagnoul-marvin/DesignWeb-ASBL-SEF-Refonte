@@ -1,0 +1,226 @@
+@import "variables";
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  overflow: hidden !important;
+  font-size: 0 !important;
+  text-indent: -100000px !important;
+  position: absolute;
+}
+
+.no_display {
+  display: none;
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.red_text {
+  color: $normal_red_color;
+}
+
+.logo_link {
+  background-position: center;
+  text-indent: -10000px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.normal_link {
+  text-decoration: 1px underline transparent;
+  transition: .3s ease-in-out;
+  color: $black_color;
+
+  &:hover {
+    text-decoration-color: $black_color;
+  }
+}
+
+.main_nav {
+  position: relative;
+  padding: $section_left_right_padding $section_left_right_padding 0 $section_left_right_padding;
+
+  .home_link {
+    background-image: url("../../resources/images/logo.svg");
+    width: 50px;
+    height: 50px;
+  }
+
+  ul.flex_container {
+    gap: 1.875em;
+    position: absolute;
+    top: -200%;
+    left: 0;
+  }
+
+  input[type="checkbox"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+    position: absolute;
+
+    &:checked {
+      & ~ ul.flex_container {
+        top: -2em;
+        left: -2em;
+        background-color: $black_color;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: calc(100vw + 2em);
+        height: calc(100vh + 2em);
+
+        & .main_nav_item {
+          & .main_nav_item_link {
+            color: $white_color;
+            font-size: 1.5625em;
+
+            &:hover {
+              text-decoration-color: $white_color;
+            }
+          }
+        }
+      }
+
+      & ~ label[for="burger_menu"] {
+        z-index: 1;
+      }
+
+      & ~ label .line {
+        background-color: transparent;
+      }
+
+      & ~ label .line:before, & ~ label .line:after {
+        background-color: $white_color;
+      }
+
+      & ~ label .line:before {
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      & ~ label .line:after {
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  label[for='burger_menu'] {
+    width: 1.4375em;
+    position: relative;
+
+    .line {
+      width: 100%;
+      display: block;
+      height: 0.2em;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background-color: $black_color;
+      -webkit-transition: background-color 0.3s ease-in-out;
+      -o-transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
+
+      &:before, &:after {
+        content: '';
+        height: 0.2em;
+        width: 100%;
+        background-color: $black_color;
+        position: absolute;
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:before {
+        -ms-transform: translateY(-0.5em);
+        transform: translateY(-0.5em);
+      }
+
+      &:after {
+        -ms-transform: translateY(0.5em);
+        transform: translateY(0.5em);
+      }
+    }
+  }
+}
+
+.footer_container {
+  padding: $section_top_bottom_padding $section_left_right_padding;
+
+  .secondary_nav {
+    flex-direction: column;
+    gap: 3.125em;
+    padding-bottom: 3.125em;
+    border-bottom: 1px solid $black_color;
+
+    div {
+      h3 {
+        margin-bottom: 1.5em;
+      }
+
+      ul.flex_container {
+        flex-direction: column;
+        gap: 1.25em;
+
+        .logo_link {
+          background-image: url("../../resources/images/fcb_logo.svg");
+          width: 35px;
+          height: 35px;
+          border-radius: .625em;
+        }
+      }
+    }
+  }
+
+  div.legal_notice_container {
+    margin-top: 3.125em;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.25em;
+    }
+  }
+}
+
+.progress_bar {
+  background-color: $light_red_color;
+  height: .3em;
+  position: fixed;
+  bottom: 0;
+  width: 0;
+  border-radius: .15em;
+}
+
+body {
+  font-family: 'SofiaPro-Regular', 'Helvetica-Roman', 'Arial-Regular', sans-serif;
+
+  h2, h3, .cta-links {
+    font-family: 'SofiaPro-Bold', 'Helvetica-Bold', 'Arial-Bold', sans-serif;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3, .cta-links {
+    font-size: 1.25em;
+  }
+
+  main {
+
+  }
+}

@@ -24,3 +24,13 @@ wp-content/*
 wp-content/themes/*
 !wp-content/themes/sef
 !wp-content/themes/sef/*
+!wp-content/themes/sef/public/*
+!wp-content/themes/sef/public/js/*
+!wp-content/themes/sef/public/css/*
+!wp-content/themes/sef/public/sass/*
+!wp-content/themes/sef/public/fonts/*
+!wp-content/themes/sef/public/fonts/arial/*
+!wp-content/themes/sef/public/fonts/helvetica/*
+!wp-content/themes/sef/public/fonts/sofia_pro/*
+!wp-content/themes/sef/resources/*
+!wp-content/themes/sef/resources/images/*
