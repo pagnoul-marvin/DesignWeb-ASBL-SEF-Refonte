@@ -4,7 +4,7 @@ export const settings = {
 
     progressBarElement: document.getElementById('progress_bar'),
     buttonElements: document.querySelectorAll('.slider_button'),
-    slideshowElement: document.querySelector('.slideshow_content'),
+    sliderLiElement: document.querySelector('.slider_element'),
     noJsBannerElement: document.querySelector('.no_js_banner'),
     validateDivElement: document.querySelector('.form_feedback'),
     notValidateDivElement: document.querySelector('.form_error'),
@@ -13,7 +13,6 @@ export const settings = {
     //NUMBERS
 
     multiplicationScrolled: 100,
-    left: 100,
     timeBeforeDivElementsDisappear: 10000,
 
 
