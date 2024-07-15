@@ -34,3 +34,4 @@ wp-content/themes/*
 !wp-content/themes/sef/public/fonts/sofia_pro/*
 !wp-content/themes/sef/resources/*
 !wp-content/themes/sef/resources/images/*
+!wp-content/themes/sef/resources/components/*

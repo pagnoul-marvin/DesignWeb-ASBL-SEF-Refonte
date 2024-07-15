@@ -271,10 +271,19 @@ a, label[for="burger_menu"] {
   width: 0;
 }
 
+.image_container {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .625em;
+  }
+}
+
 body {
   font-family: 'SofiaPro-Regular', 'Helvetica-Roman', 'Arial-Regular', sans-serif;
 
-  h2, h3, .cta_link {
+  h2, h3, h4, .cta_link {
     font-family: 'SofiaPro-Bold', 'Helvetica-Bold', 'Arial-Bold', sans-serif;
     font-weight: bold;
   }
@@ -292,11 +301,45 @@ body {
     }
   }
 
-  h3, .cta_link {
+  h3, h4, .cta_link {
     font-size: 1.25em;
   }
 
   main {
+
+    .contact_and_support_us_container {
+      .link_container {
+        flex-wrap: wrap;
+        gap: 1.875em;
+
+        a.cta_link {
+          text-indent: unset;
+          background-size: 30px 15px;
+          padding: 1.4em .5em;
+          text-align: left;
+          max-width: unset;
+          flex-grow: 1;
+          background-position: 90%;
+
+          &:first-of-type {
+            background-image: url("../../resources/images/right_arrow_hover.svg");
+
+            &:hover {
+              background-image: url("../../resources/images/right_arrow.svg");
+            }
+          }
+
+          &:last-of-type {
+            background-image: url("../../resources/images/right_arrow.svg");
+
+            &:hover {
+              background-image: url("../../resources/images/right_arrow_hover.svg");
+            }
+          }
+        }
+      }
+    }
+
     .home_hero_container {
       position: relative;
       padding: 0 3.125em;
@@ -375,15 +418,6 @@ body {
       .last_project {
         position: relative;
         overflow: hidden;
-
-        &_image_container {
-          img {
-            border-radius: .625em;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
       }
     }
 
@@ -471,8 +505,78 @@ body {
     .goal_and_who_container {
       article {
         margin-bottom: 3.125em;
+
         h3 {
           margin-bottom: 1.5em;
+        }
+      }
+    }
+
+    .houses_container {
+      p:not(:last-child), .image_container {
+        margin-bottom: 1.25em;
+      }
+
+      .house {
+
+        &:not(:last-child) {
+          margin-bottom: 3.125em;
+        }
+
+        &:first-of-type {
+          margin-top: 1.875em;
+        }
+      }
+    }
+
+    .shops_container, .houses_container {
+      ul {
+        li {
+          list-style: inside;
+
+          &:not(:last-child) {
+            margin-bottom: 1.25em;
+          }
+        }
+      }
+    }
+
+    .shops_container {
+      row-gap: 3.125em;
+      flex-direction: column;
+
+      .shop {
+
+        h3 {
+          margin: 1.5em 0;
+          text-align: center;
+          font-family: 'SofiaPro-Bold-Italic', 'Arial-Bold-Italic', 'Helvetica-Bold-Italic', sans-serif;
+          font-style: italic;
+        }
+
+        .address_and_schedule_container {
+          border-bottom: 1px solid $white_color;
+
+          .address_container {
+            border-right: 1px solid $white_color;
+            padding-right: 1.25em;
+          }
+
+          .schedule_container {
+            padding-left: 1.25em;
+          }
+
+          .address_container, .schedule_container {
+            flex-direction: column;
+            row-gap: 1.875em;
+            padding-bottom: 1.875em;
+            flex-basis: calc(100% / 2 - 1.25em);
+            justify-content: unset;
+
+            .cta_link {
+              background-image: url("../../resources/images/google_maps_icon.svg");
+            }
+          }
         }
       }
     }

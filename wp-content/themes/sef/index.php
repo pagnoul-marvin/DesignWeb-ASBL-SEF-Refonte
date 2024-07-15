@@ -102,7 +102,7 @@ $home_testimonials = new WP_Query([
 
                     <article class="last_project">
 
-                        <div class="last_project_image_container">
+                        <div class="image_container">
 
                             <img src="<?= get_field('home_last_project_image')['url'] ?>"
                                  alt="<?= get_field('home_last_project_image')['alt'] ?>"
