@@ -16,14 +16,13 @@ a, label[for="burger_menu"] {
 .cta_link {
   border: 3px solid;
   text-decoration: none;
-  padding: 1.4em 0;
+  padding: 1.4em .5em;
   transition: .3s ease-in-out;
   border-radius: .5em;
-  width: 6.5em;
-  max-width: 6.5em;
+  align-content: center;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
   }
 
   &.white_link, &.light_link {
@@ -315,10 +314,9 @@ body {
         a.cta_link {
           text-indent: unset;
           background-size: 30px 15px;
-          padding: 1.4em .5em;
           text-align: left;
           max-width: unset;
-          flex-grow: 1;
+          flex-basis: calc(50% - 1.875em - 6px);
           background-position: 90%;
 
           &:first-of-type {
@@ -393,8 +391,12 @@ body {
 
       .link_container {
         flex-wrap: wrap;
-        align-items: center;
-        row-gap: 1.875em;
+        align-items: stretch;
+        gap: 1.875em;
+
+        a.cta_link {
+          flex-basis: calc(50% - 1.875em - 6px);
+        }
       }
     }
 
@@ -476,7 +478,7 @@ body {
           &:first-child, &:last-child {
             background-size: 30px 15px;
             text-indent: unset;
-            padding: 1.4em .5em;
+            flex-basis: calc(50% - 1.875em - 6px);
           }
 
           &:first-child {
@@ -575,9 +577,21 @@ body {
 
             .cta_link {
               background-image: url("../../resources/images/google_maps_icon.svg");
+              max-width: unset;
+              width: unset;
             }
           }
         }
+      }
+    }
+
+    .phone_container {
+      flex-direction: column;
+      gap: 3.125em;
+
+      .cta_link {
+        max-width: unset;
+        width: unset;
       }
     }
   }

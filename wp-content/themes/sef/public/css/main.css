@@ -12,14 +12,13 @@ a:hover, label[for=burger_menu]:hover {
 .cta_link {
   border: 3px solid;
   text-decoration: none;
-  padding: 1.4em 0;
+  padding: 1.4em 0.5em;
   transition: 0.3s ease-in-out;
   border-radius: 0.5em;
-  width: 6.5em;
-  max-width: 6.5em;
+  align-content: center;
 }
 .cta_link:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 .cta_link.white_link, .cta_link.light_link {
   border-color: #A03127;
@@ -265,10 +264,9 @@ body main .contact_and_support_us_container .link_container {
 body main .contact_and_support_us_container .link_container a.cta_link {
   text-indent: unset;
   background-size: 30px 15px;
-  padding: 1.4em 0.5em;
   text-align: left;
   max-width: unset;
-  flex-grow: 1;
+  flex-basis: calc(50% - 1.875em - 6px);
   background-position: 90%;
 }
 body main .contact_and_support_us_container .link_container a.cta_link:first-of-type {
@@ -328,8 +326,11 @@ body main .home_hero_container .scroll_down p:after {
 }
 body main .home_hero_container .link_container {
   flex-wrap: wrap;
-  align-items: center;
-  row-gap: 1.875em;
+  align-items: stretch;
+  gap: 1.875em;
+}
+body main .home_hero_container .link_container a.cta_link {
+  flex-basis: calc(50% - 1.875em - 6px);
 }
 body main .last_project_container {
   flex-wrap: wrap;
@@ -393,7 +394,7 @@ body main .testimonial_container .after_and_before_links .slider_button {
 body main .testimonial_container .after_and_before_links .slider_button:first-child, body main .testimonial_container .after_and_before_links .slider_button:last-child {
   background-size: 30px 15px;
   text-indent: unset;
-  padding: 1.4em 0.5em;
+  flex-basis: calc(50% - 1.875em - 6px);
 }
 body main .testimonial_container .after_and_before_links .slider_button:first-child {
   background-image: url("../../resources/images/left_arrow.svg");
@@ -461,6 +462,16 @@ body main .shops_container .shop .address_and_schedule_container .address_contai
 }
 body main .shops_container .shop .address_and_schedule_container .address_container .cta_link, body main .shops_container .shop .address_and_schedule_container .schedule_container .cta_link {
   background-image: url("../../resources/images/google_maps_icon.svg");
+  max-width: unset;
+  width: unset;
+}
+body main .phone_container {
+  flex-direction: column;
+  gap: 3.125em;
+}
+body main .phone_container .cta_link {
+  max-width: unset;
+  width: unset;
 }
 
 /*# sourceMappingURL=main.css.map */
