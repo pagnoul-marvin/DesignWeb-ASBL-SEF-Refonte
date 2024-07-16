@@ -14,6 +14,7 @@ a, label[for="burger_menu"] {
 }
 
 .cta_link {
+  display: inline-block;
   border: 3px solid;
   text-decoration: none;
   padding: 1.4em .5em;
@@ -85,6 +86,10 @@ a, label[for="burger_menu"] {
 .flex_container {
   display: flex;
   justify-content: space-between;
+}
+
+.grid_container {
+  display: grid;
 }
 
 .red_text {
@@ -318,6 +323,7 @@ body {
           max-width: unset;
           flex-basis: calc(50% - 1.875em - 6px);
           background-position: 90%;
+          flex-grow: 1;
 
           &:first-of-type {
             background-image: url("../../resources/images/right_arrow_hover.svg");
@@ -400,7 +406,7 @@ body {
       }
     }
 
-    .last_project_container {
+    .last_project_container, .projects_container {
       flex-wrap: wrap;
       gap: 1.875em;
 
@@ -593,6 +599,75 @@ body {
         max-width: unset;
         width: unset;
       }
+    }
+
+    .mail_container {
+      form {
+        margin-top: 3.125em;
+        flex-direction: column;
+        gap: 3.125em;
+
+        div {
+          input, textarea {
+            width: calc(100% - 1.25em);
+            padding: .625em;
+            margin-top: 1.875em;
+            border-bottom: 1px solid $white_color;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background-color: transparent;
+            color: $white_color;
+
+            &:focus {
+              border-color: $white_color;
+              outline: 1px solid $white_color;
+              border-radius: .625em;
+            }
+          }
+        }
+      }
+    }
+
+    .financial_donation_container, .material_donation_container {
+      p {
+        &:first-of-type {
+          margin-bottom: 1.875em;
+        }
+
+        &:last-of-type {
+          margin-top: 1.25em;
+        }
+      }
+
+      ul {
+        margin-bottom: 1.875em;
+
+        li {
+          list-style: inside;
+          &:not(:last-child) {
+            margin-bottom: 1.25em;
+          }
+        }
+      }
+    }
+
+    .material_donation_container {
+      p {
+        &:last-of-type {
+          margin-top: 1.875em;
+        }
+      }
+
+      a.cta_link {
+        margin-top: 1.875em;
+        max-width: unset;
+        width: calc(100% - 1em - 6px);
+      }
+    }
+
+    .projects_container {
+
     }
   }
 }

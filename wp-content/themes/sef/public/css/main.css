@@ -10,6 +10,7 @@ a:hover, label[for=burger_menu]:hover {
 }
 
 .cta_link {
+  display: inline-block;
   border: 3px solid;
   text-decoration: none;
   padding: 1.4em 0.5em;
@@ -74,6 +75,10 @@ a:hover, label[for=burger_menu]:hover {
 .flex_container {
   display: flex;
   justify-content: space-between;
+}
+
+.grid_container {
+  display: grid;
 }
 
 .red_text {
@@ -268,6 +273,7 @@ body main .contact_and_support_us_container .link_container a.cta_link {
   max-width: unset;
   flex-basis: calc(50% - 1.875em - 6px);
   background-position: 90%;
+  flex-grow: 1;
 }
 body main .contact_and_support_us_container .link_container a.cta_link:first-of-type {
   background-image: url("../../resources/images/right_arrow_hover.svg");
@@ -332,11 +338,11 @@ body main .home_hero_container .link_container {
 body main .home_hero_container .link_container a.cta_link {
   flex-basis: calc(50% - 1.875em - 6px);
 }
-body main .last_project_container {
+body main .last_project_container, body main .projects_container {
   flex-wrap: wrap;
   gap: 1.875em;
 }
-body main .last_project_container > a.cta_link {
+body main .last_project_container > a.cta_link, body main .projects_container > a.cta_link {
   flex-basis: 100%;
   max-width: unset;
   text-indent: unset;
@@ -344,10 +350,10 @@ body main .last_project_container > a.cta_link {
   background-size: 30px 15px;
   background-position: 80% center;
 }
-body main .last_project_container > a.cta_link:hover {
+body main .last_project_container > a.cta_link:hover, body main .projects_container > a.cta_link:hover {
   background-image: url("../../resources/images/right_arrow_hover.svg");
 }
-body main .last_project_container .last_project {
+body main .last_project_container .last_project, body main .projects_container .last_project {
   position: relative;
   overflow: hidden;
 }
@@ -472,6 +478,50 @@ body main .phone_container {
 body main .phone_container .cta_link {
   max-width: unset;
   width: unset;
+}
+body main .mail_container form {
+  margin-top: 3.125em;
+  flex-direction: column;
+  gap: 3.125em;
+}
+body main .mail_container form div input, body main .mail_container form div textarea {
+  width: calc(100% - 1.25em);
+  padding: 0.625em;
+  margin-top: 1.875em;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+}
+body main .mail_container form div input:focus, body main .mail_container form div textarea:focus {
+  border-color: rgb(255, 255, 255);
+  outline: 1px solid rgb(255, 255, 255);
+  border-radius: 0.625em;
+}
+body main .financial_donation_container p:first-of-type, body main .material_donation_container p:first-of-type {
+  margin-bottom: 1.875em;
+}
+body main .financial_donation_container p:last-of-type, body main .material_donation_container p:last-of-type {
+  margin-top: 1.25em;
+}
+body main .financial_donation_container ul, body main .material_donation_container ul {
+  margin-bottom: 1.875em;
+}
+body main .financial_donation_container ul li, body main .material_donation_container ul li {
+  list-style: inside;
+}
+body main .financial_donation_container ul li:not(:last-child), body main .material_donation_container ul li:not(:last-child) {
+  margin-bottom: 1.25em;
+}
+body main .material_donation_container p:last-of-type {
+  margin-top: 1.875em;
+}
+body main .material_donation_container a.cta_link {
+  margin-top: 1.875em;
+  max-width: unset;
+  width: calc(100% - 1em - 6px);
 }
 
 /*# sourceMappingURL=main.css.map */

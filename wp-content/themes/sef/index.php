@@ -9,7 +9,7 @@ $home_hero_section = new WP_Query([
 ]);
 
 $home_last_projects = new WP_Query([
-    'post_type' => 'home-last-project',
+    'post_type' => 'project',
     'posts_per_page' => 3,
     'post_status' => 'publish',
     'orderby' => 'date',
@@ -104,23 +104,23 @@ $home_testimonials = new WP_Query([
 
                         <div class="image_container">
 
-                            <img src="<?= get_field('home_last_project_image')['url'] ?>"
-                                 alt="<?= get_field('home_last_project_image')['alt'] ?>"
-                                 width="<?= get_field('home_last_project_image')['width'] ?>"
-                                 height="<?= get_field('home_last_project_image')['height'] ?>">
+                            <img src="<?= get_field('project_image')['url'] ?>"
+                                 alt="<?= get_field('project_image')['alt'] ?>"
+                                 width="<?= get_field('project_image')['width'] ?>"
+                                 height="<?= get_field('project_image')['height'] ?>">
 
                         </div>
 
                         <div class="last_project_content_container">
 
-                            <h3><?= get_field('home_last_project_title') ?></h3>
+                            <h3><?= get_field('project_title') ?></h3>
 
                             <time datetime="<?= get_the_modified_time('c'); ?>"><?= get_the_modified_time('d F Y') ?></time>
 
                         </div>
 
                         <a class="card_link" title="Aller voir le projet"
-                           href="<?= get_field('home_last_project_link')['url'] ?>"></a>
+                           href="<?= get_field('project_link')['url'] ?>"></a>
 
                     </article>
 
