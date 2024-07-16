@@ -104,10 +104,10 @@ $home_testimonials = new WP_Query([
 
                         <div class="image_container">
 
-                            <img src="<?= get_field('project_image')['url'] ?>"
-                                 alt="<?= get_field('project_image')['alt'] ?>"
-                                 width="<?= get_field('project_image')['width'] ?>"
-                                 height="<?= get_field('project_image')['height'] ?>">
+                            <img src="<?= get_field('project_first_image')['url'] ?>"
+                                 alt="<?= get_field('project_first_image')['alt'] ?>"
+                                 width="<?= get_field('project_first_image')['width'] ?>"
+                                 height="<?= get_field('project_first_image')['height'] ?>">
 
                         </div>
 

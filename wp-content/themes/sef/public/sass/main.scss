@@ -406,7 +406,7 @@ body {
       }
     }
 
-    .last_project_container, .projects_container {
+    .last_project_container, .projects_container, .other_projects_container {
       flex-wrap: wrap;
       gap: 1.875em;
 
@@ -423,7 +423,7 @@ body {
         }
       }
 
-      .last_project {
+      .last_project, .project, .other_project {
         position: relative;
         overflow: hidden;
       }
@@ -645,6 +645,7 @@ body {
 
         li {
           list-style: inside;
+
           &:not(:last-child) {
             margin-bottom: 1.25em;
           }
@@ -666,8 +667,15 @@ body {
       }
     }
 
-    .projects_container {
+    .project_container {
+      .images_container {
+        margin-top: 1.875em;
 
+        ul {
+          gap: 1.875em;
+          flex-direction: column;
+        }
+      }
     }
   }
 }

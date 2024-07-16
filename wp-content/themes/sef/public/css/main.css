@@ -338,11 +338,11 @@ body main .home_hero_container .link_container {
 body main .home_hero_container .link_container a.cta_link {
   flex-basis: calc(50% - 1.875em - 6px);
 }
-body main .last_project_container, body main .projects_container {
+body main .last_project_container, body main .projects_container, body main .other_projects_container {
   flex-wrap: wrap;
   gap: 1.875em;
 }
-body main .last_project_container > a.cta_link, body main .projects_container > a.cta_link {
+body main .last_project_container > a.cta_link, body main .projects_container > a.cta_link, body main .other_projects_container > a.cta_link {
   flex-basis: 100%;
   max-width: unset;
   text-indent: unset;
@@ -350,10 +350,10 @@ body main .last_project_container > a.cta_link, body main .projects_container > 
   background-size: 30px 15px;
   background-position: 80% center;
 }
-body main .last_project_container > a.cta_link:hover, body main .projects_container > a.cta_link:hover {
+body main .last_project_container > a.cta_link:hover, body main .projects_container > a.cta_link:hover, body main .other_projects_container > a.cta_link:hover {
   background-image: url("../../resources/images/right_arrow_hover.svg");
 }
-body main .last_project_container .last_project, body main .projects_container .last_project {
+body main .last_project_container .last_project, body main .last_project_container .project, body main .last_project_container .other_project, body main .projects_container .last_project, body main .projects_container .project, body main .projects_container .other_project, body main .other_projects_container .last_project, body main .other_projects_container .project, body main .other_projects_container .other_project {
   position: relative;
   overflow: hidden;
 }
@@ -522,6 +522,13 @@ body main .material_donation_container a.cta_link {
   margin-top: 1.875em;
   max-width: unset;
   width: calc(100% - 1em - 6px);
+}
+body main .project_container .images_container {
+  margin-top: 1.875em;
+}
+body main .project_container .images_container ul {
+  gap: 1.875em;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=main.css.map */
