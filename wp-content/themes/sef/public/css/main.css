@@ -530,5 +530,19 @@ body main .project_container .images_container ul {
   gap: 1.875em;
   flex-direction: column;
 }
+body main .ln_container {
+  flex-direction: column;
+}
+body main .ln_container .section:first-of-type p:not(:last-child) {
+  margin-bottom: 1.25em;
+}
+body main .ln_container .section:nth-of-type(even) {
+  background-color: #712424;
+  color: rgb(255, 255, 255);
+}
+body main .ln_container .section:nth-of-type(odd) {
+  background-color: #FFF2F0;
+  color: #A03127;
+}
 
 /*# sourceMappingURL=main.css.map */

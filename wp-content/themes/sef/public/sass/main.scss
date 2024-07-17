@@ -677,5 +677,26 @@ body {
         }
       }
     }
+
+    .ln_container {
+      flex-direction: column;
+      .section {
+        &:first-of-type {
+          p {
+            &:not(:last-child) {
+              margin-bottom: 1.25em;
+            }
+          }
+        }
+        &:nth-of-type(even) {
+          background-color: $dark_red_color;
+          color: $white_color;
+        }
+        &:nth-of-type(odd) {
+          background-color: $light_red_color;
+          color: $normal_red_color;
+        }
+      }
+    }
   }
 }
