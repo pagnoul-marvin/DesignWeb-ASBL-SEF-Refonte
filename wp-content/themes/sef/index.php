@@ -34,6 +34,8 @@ $home_testimonials = new WP_Query([
 
     <main>
 
+        <?php dw_component('no_js_banner'); ?>
+
         <section class="first_section">
 
             <?php if ($home_hero_section->have_posts()) : while ($home_hero_section->have_posts()) :$home_hero_section->the_post() ?>

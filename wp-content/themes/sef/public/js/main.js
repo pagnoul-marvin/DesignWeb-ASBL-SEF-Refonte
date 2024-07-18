@@ -12,7 +12,7 @@ const sef = {
         this.sliderGap = parseInt(window.getComputedStyle(this.sliderElement).getPropertyValue('gap'));
         this.maxPourcentage = this.sliderElement.scrollWidth - this.sliderElement.clientWidth;
         this.addEventListeners();
-        //this.noJs();
+        this.noJs();
         //this.disappearDivElements();
     },
 
@@ -29,11 +29,9 @@ const sef = {
         });
     },
 
-    /*
     noJs() {
         settings.noJsBannerElement.classList.add(settings.noDisplayClass);
     },
-    */
 
     changeWidthOfProgressBarElement() {
         const winScroll = document.documentElement.scrollTop;

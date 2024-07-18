@@ -221,6 +221,67 @@ a, label[for="burger_menu"] {
   }
 }
 
+.no_js_banner {
+
+  &_text {
+    color: $white_color;
+    margin-bottom: 1.25em;
+  }
+
+  .banner {
+    flex-direction: row-reverse;
+    margin-top: 1.875em;
+
+    div {
+      margin: 2em;
+    }
+
+    label {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      margin: 5em 5em 0 0;
+
+      &:before, &:after {
+        content: '';
+        width: 3px;
+        height: 100%;
+        background-color: $white_color;
+        position: absolute;
+        top: 0;
+        left: 12.5px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    input {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      visibility: hidden;
+      position: absolute;
+
+      &:checked {
+        display: none;
+
+        & + label + div, & + label {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .footer_container {
   padding: $section_top_bottom_padding $section_left_right_padding;
 
@@ -680,6 +741,7 @@ body {
 
     .ln_container {
       flex-direction: column;
+
       .section {
         &:first-of-type {
           p {
@@ -688,10 +750,12 @@ body {
             }
           }
         }
+
         &:nth-of-type(even) {
           background-color: $dark_red_color;
           color: $white_color;
         }
+
         &:nth-of-type(odd) {
           background-color: $light_red_color;
           color: $normal_red_color;

@@ -19,6 +19,8 @@ $support_material = new WP_Query([
 
 <main>
 
+    <?php dw_component('no_js_banner'); ?>
+
     <section class="section">
 
         <h2 class="main_title">Nous <span class="red_text">soutenir</span></h2>

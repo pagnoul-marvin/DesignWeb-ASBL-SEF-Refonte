@@ -45,6 +45,8 @@ $other_projects = new WP_Query([
 
 <main>
 
+    <?php dw_component('no_js_banner'); ?>
+
     <article class="section">
 
         <div class="project_container">

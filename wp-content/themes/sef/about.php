@@ -30,6 +30,8 @@ $about_shops = new WP_Query([
 
 <main>
 
+    <?php dw_component('no_js_banner'); ?>
+
     <section class="section">
 
         <h2 class="main_title">&Agrave; <span class="red_text">propos</span></h2>

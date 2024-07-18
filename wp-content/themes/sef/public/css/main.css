@@ -189,6 +189,55 @@ a:hover, label[for=burger_menu]:hover {
   transform: translateY(0.5em);
 }
 
+.no_js_banner_text {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1.25em;
+}
+.no_js_banner .banner {
+  flex-direction: row-reverse;
+  margin-top: 1.875em;
+}
+.no_js_banner .banner div {
+  margin: 2em;
+}
+.no_js_banner .banner label {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 5em 5em 0 0;
+}
+.no_js_banner .banner label:before, .no_js_banner .banner label:after {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+}
+.no_js_banner .banner label:before {
+  transform: rotate(45deg);
+}
+.no_js_banner .banner label:after {
+  transform: rotate(-45deg);
+}
+.no_js_banner .banner input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  visibility: hidden;
+  position: absolute;
+}
+.no_js_banner .banner input:checked {
+  display: none;
+}
+.no_js_banner .banner input:checked + label + div, .no_js_banner .banner input:checked + label {
+  display: none;
+}
+
 .footer_container {
   padding: 4.375em 1.25em;
 }
