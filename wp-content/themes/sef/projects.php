@@ -24,7 +24,7 @@ $projects = new WP_Query([
 
                 <?php if ($projects->have_posts()) : while ($projects->have_posts()) :$projects->the_post() ?>
 
-                    <article class="project">
+                    <article class="project flex_container">
 
                         <div class="image_container">
 

@@ -1,4 +1,4 @@
-<div class="no_js_banner dark_red_section">
+<div class="no_js_banner dark_red_section" id="no_js_banner">
 
     <div class="banner flex_container">
 

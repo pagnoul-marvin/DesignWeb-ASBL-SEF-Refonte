@@ -59,9 +59,9 @@ $other_projects = new WP_Query([
 
                 <div class="images_container">
 
-                    <ul class="flex_container">
+                    <ul class="grid_container">
 
-                        <li>
+                        <li class="flex_container">
 
                             <div class="image_container">
 
@@ -74,7 +74,7 @@ $other_projects = new WP_Query([
 
                         </li>
 
-                        <li>
+                        <li class="flex_container">
 
                             <div class="image_container">
 
@@ -87,7 +87,7 @@ $other_projects = new WP_Query([
 
                         </li>
 
-                        <li>
+                        <li class="flex_container">
 
                             <div class="image_container">
 
@@ -118,7 +118,7 @@ $other_projects = new WP_Query([
 
             <?php if ($other_projects->have_posts()) : while ($other_projects->have_posts()) :$other_projects->the_post() ?>
 
-                <article class="other_project">
+                <article class="other_project flex_container">
 
                     <div class="image_container">
 

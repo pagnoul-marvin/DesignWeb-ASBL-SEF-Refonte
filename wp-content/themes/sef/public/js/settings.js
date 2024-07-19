@@ -4,8 +4,9 @@ export const settings = {
 
     progressBarElement: document.getElementById('progress_bar'),
     buttonElements: document.querySelectorAll('.slider_button'),
+    sliderElement: document.getElementById('slider'),
     sliderLiElement: document.querySelector('.slider_element'),
-    noJsBannerElement: document.querySelector('.no_js_banner'),
+    noJsBannerElement: document.getElementById('no_js_banner'),
     validateDivElement: document.querySelector('.form_feedback'),
     notValidateDivElement: document.querySelector('.form_error'),
 

@@ -1,18 +1,15 @@
 import {settings} from "./settings.js";
 
 const sef = {
-
-    sliderElement: document.getElementById('slider'),
     sliderGap: 0,
     pourcentage: 0,
     minPourcentage: 0,
     maxPourcentage: 0,
 
     init() {
-        this.sliderGap = parseInt(window.getComputedStyle(this.sliderElement).getPropertyValue('gap'));
-        this.maxPourcentage = this.sliderElement.scrollWidth - this.sliderElement.clientWidth;
-        this.addEventListeners();
         this.noJs();
+        this.initSliderElements();
+        this.addEventListeners();
         //this.disappearDivElements();
     },
 
@@ -20,7 +17,6 @@ const sef = {
         window.addEventListener('scroll', () => {
             this.changeWidthOfProgressBarElement();
         });
-
 
         settings.buttonElements.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -38,6 +34,13 @@ const sef = {
         const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / documentHeight) * settings.multiplicationScrolled;
         settings.progressBarElement.style.width = `${scrolled}%`;
+    },
+
+    initSliderElements() {
+        if (settings.sliderElement) {
+            this.sliderGap = parseInt(window.getComputedStyle(settings.sliderElement).getPropertyValue('gap'));
+            this.maxPourcentage = settings.sliderElement.scrollWidth - settings.sliderElement.clientWidth;
+        }
     },
 
     sliderAnimation(e) {
@@ -59,7 +62,7 @@ const sef = {
 
         }
 
-        this.sliderElement.scrollTo({
+        settings.sliderElement.scrollTo({
             left: this.pourcentage,
             behavior: 'smooth',
         });

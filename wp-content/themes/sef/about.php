@@ -36,7 +36,7 @@ $about_shops = new WP_Query([
 
         <h2 class="main_title">&Agrave; <span class="red_text">propos</span></h2>
 
-        <div class="goal_and_who_container">
+        <div class="goal_and_who_container flex_container">
 
             <?php if ($about_goal_and_who->have_posts()) : while ($about_goal_and_who->have_posts()) :$about_goal_and_who->the_post() ?>
 
@@ -72,7 +72,7 @@ $about_shops = new WP_Query([
 
         <h2 class="secondary_title">Nos maisons</h2>
 
-        <div class="houses_container">
+        <div class="houses_container flex_container">
 
             <?php if ($about_houses->have_posts()) : while ($about_houses->have_posts()) :$about_houses->the_post() ?>
 
@@ -84,36 +84,45 @@ $about_shops = new WP_Query([
 
                 <?php endif; ?>
 
-                <article class="house">
-
-                    <h3 class="hidden"><?= get_field('house_title') ?></h3>
-
-                    <div class="image_container">
-
-                        <img src="<?= get_field('house_image')['url'] ?>"
-                             alt="<?= get_field('house_image')['alt'] ?>"
-                             width="<?= get_field('house_image')['width'] ?>"
-                             height="<?= get_field('house_image')['height'] ?>">
-
-                    </div>
-
-                    <ul>
-
-                        <li><?= get_field('house_first_feature') ?></li>
-
-                        <li><?= get_field('house_second_feature') ?></li>
-
-                        <?php if (get_field('house_third_feature')): ?>
-
-                            <li><?= get_field('house_third_feature') ?></li>
-
-                        <?php endif; ?>
-
-                    </ul>
-
-                </article>
-
             <?php endwhile; endif; ?>
+
+            <div class="flex_container">
+
+                <?php if ($about_houses->have_posts()) : while ($about_houses->have_posts()) :
+                    $about_houses->the_post() ?>
+
+                    <article class="house flex_container">
+
+                        <h3 class="hidden"><?= get_field('house_title') ?></h3>
+
+                        <div class="image_container">
+
+                            <img src="<?= get_field('house_image')['url'] ?>"
+                                 alt="<?= get_field('house_image')['alt'] ?>"
+                                 width="<?= get_field('house_image')['width'] ?>"
+                                 height="<?= get_field('house_image')['height'] ?>">
+
+                        </div>
+
+                        <ul>
+
+                            <li><?= get_field('house_first_feature') ?></li>
+
+                            <li><?= get_field('house_second_feature') ?></li>
+
+                            <?php if (get_field('house_third_feature')): ?>
+
+                                <li><?= get_field('house_third_feature') ?></li>
+
+                            <?php endif; ?>
+
+                        </ul>
+
+                    </article>
+
+                <?php endwhile; endif; ?>
+
+            </div>
 
         </div>
 
@@ -127,7 +136,7 @@ $about_shops = new WP_Query([
 
             <?php if ($about_shops->have_posts()) : while ($about_shops->have_posts()) :$about_shops->the_post() ?>
 
-                <article class="shop">
+                <article class="shop flex_container">
 
                     <div class="image_container">
 
@@ -138,9 +147,9 @@ $about_shops = new WP_Query([
 
                     </div>
 
-                    <h3><?= get_field('shop_title') ?></h3>
-
                     <div class="address_and_schedule_container flex_container">
+
+                        <h3><?= get_field('shop_title') ?></h3>
 
                         <div class="address_container flex_container">
 

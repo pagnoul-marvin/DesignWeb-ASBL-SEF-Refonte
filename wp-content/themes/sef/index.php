@@ -102,7 +102,7 @@ $home_testimonials = new WP_Query([
 
                 <?php if ($home_last_projects->have_posts()) : while ($home_last_projects->have_posts()) :$home_last_projects->the_post() ?>
 
-                    <article class="last_project">
+                    <article class="last_project flex_container">
 
                         <div class="image_container">
 
@@ -144,7 +144,7 @@ $home_testimonials = new WP_Query([
 
                 <div class="stat_container">
 
-                    <ul>
+                    <ul class="flex_container">
 
                         <li class="flex_container">
 
