@@ -9,6 +9,16 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
   position: absolute;
 }
 
+.translated {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.translated.active {
+  transition: 1.5s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .cta_link {
   display: inline-block;
   border: 3px solid;

@@ -13,6 +13,17 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   position: absolute;
 }
 
+.translated {
+  opacity: 0;
+  transform: translateY(30px);
+
+  &.active {
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .cta_link {
   display: inline-block;
   border: 3px solid;
@@ -808,6 +819,7 @@ body {
       .home_hero_container {
         .link_container {
           justify-content: space-evenly;
+
           a.cta_link {
             flex-basis: 33%;
           }
@@ -961,6 +973,7 @@ body {
 
       .other_projects_container {
         flex-wrap: nowrap;
+
         .image_container {
           flex-grow: 1;
         }

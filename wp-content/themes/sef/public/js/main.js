@@ -16,6 +16,11 @@ const sef = {
     addEventListeners() {
         window.addEventListener('scroll', () => {
             this.changeWidthOfProgressBarElement();
+            this.appearSections();
+        });
+
+        window.addEventListener('load', () => {
+            this.appearSections();
         });
 
         settings.buttonElements.forEach(button => {
@@ -27,6 +32,9 @@ const sef = {
 
     noJs() {
         settings.noJsBannerElement.classList.add(settings.noDisplayClass);
+        settings.sectionElements.forEach(section => {
+            section.classList.add(settings.translatedClass);
+        });
     },
 
     changeWidthOfProgressBarElement() {
@@ -65,6 +73,14 @@ const sef = {
         settings.sliderElement.scrollTo({
             left: this.pourcentage,
             behavior: 'smooth',
+        });
+    },
+
+    appearSections() {
+        settings.sectionElements.forEach(section => {
+            if (section.getBoundingClientRect().top <= window.innerHeight) {
+                section.classList.add(settings.activeClass);
+            }
         });
     },
 
