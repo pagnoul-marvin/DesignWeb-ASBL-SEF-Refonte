@@ -15,11 +15,17 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
 
 .translated {
   opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
   transform: translateY(30px);
 
   &.active {
+    -webkit-transition: 1.5s ease-in-out;
+    -o-transition: 1.5s ease-in-out;
     transition: 1.5s ease-in-out;
     opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
   }
 }
@@ -29,11 +35,16 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   border: 3px solid;
   text-decoration: none;
   padding: 1.4em .5em;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   border-radius: .5em;
+  -ms-flex-line-pack: center;
   align-content: center;
 
   &:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
     transform: scale(1.02);
   }
 
@@ -95,11 +106,16 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
 }
 
 .flex_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .grid_container {
+  display: -ms-grid;
   display: grid;
 }
 
@@ -116,11 +132,15 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
 }
 
 .normal_link {
+  -webkit-text-decoration: 1px underline transparent;
   text-decoration: 1px underline transparent;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   color: $black_color;
 
   &:hover {
+    -webkit-text-decoration-color: $black_color;
     text-decoration-color: $black_color;
   }
 }
@@ -128,6 +148,8 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
 .main_nav {
   position: relative;
   padding: $section_left_right_padding $section_left_right_padding 0 $section_left_right_padding;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   .home_link {
@@ -142,11 +164,14 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
     top: -200%;
     left: 0;
     opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
   }
 
   input[type="checkbox"] {
     clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
     clip-path: inset(50%);
     height: 1px;
     width: 1px;
@@ -159,8 +184,15 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
         top: 0;
         background-color: $black_color;
         opacity: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
         justify-content: space-evenly;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         width: calc(100vw + 2em);
         height: calc(100vh + 2em);
@@ -171,6 +203,7 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
             font-size: 1.5625em;
 
             &:hover {
+              -webkit-text-decoration-color: $white_color;
               text-decoration-color: $white_color;
             }
           }
@@ -190,10 +223,14 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
       }
 
       & ~ label .line:before {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
 
       & ~ label .line:after {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
       }
     }
@@ -209,8 +246,12 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
       height: 0.2em;
       position: absolute;
       top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
       transform: translateY(-50%);
       background-color: $black_color;
+      -webkit-transition: background-color .3s ease-in-out;
+      -o-transition: background-color .3s ease-in-out;
       transition: background-color .3s ease-in-out;
 
       &:before, &:after {
@@ -219,14 +260,22 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
         width: 100%;
         background-color: $black_color;
         position: absolute;
+        -webkit-transition: -webkit-transform .3s ease-in-out;
+        transition: -webkit-transform .3s ease-in-out;
+        -o-transition: transform .3s ease-in-out;
         transition: transform .3s ease-in-out;
+        transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
       }
 
       &:before {
+        -webkit-transform: translateY(-0.5em);
+        -ms-transform: translateY(-0.5em);
         transform: translateY(-0.5em);
       }
 
       &:after {
+        -webkit-transform: translateY(0.5em);
+        -ms-transform: translateY(0.5em);
         transform: translateY(0.5em);
       }
     }
@@ -241,6 +290,9 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   }
 
   .banner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
     margin-top: 1.875em;
 
@@ -267,16 +319,21 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
       }
 
       &:before {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
       }
 
       &:after {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
     }
 
     input {
       clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(50%);
       clip-path: inset(50%);
       height: 1px;
       width: 1px;
@@ -298,6 +355,9 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   padding: $section_top_bottom_padding $section_left_right_padding;
 
   .secondary_nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 3.125em;
     padding-bottom: 3.125em;
@@ -309,6 +369,9 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
       }
 
       ul.flex_container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 1.25em;
 
@@ -352,6 +415,7 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: .625em;
   }
@@ -386,6 +450,7 @@ body {
 
     .contact_and_support_us_container {
       .link_container {
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         gap: 1.875em;
 
@@ -394,8 +459,11 @@ body {
           background-size: 30px 15px;
           text-align: left;
           max-width: unset;
+          -ms-flex-preferred-size: calc(50% - 1.875em - 6px);
           flex-basis: calc(50% - 1.875em - 6px);
           background-position: 90%;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1;
 
           &:first-of-type {
@@ -432,22 +500,45 @@ body {
       }
 
       .scroll_down {
+        -webkit-animation: scroll_down 1.5s infinite ease-in-out;
         animation: scroll_down 1.5s infinite ease-in-out;
         position: absolute;
         left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         bottom: 50px;
 
-        @keyframes scroll_down {
+        @-webkit-keyframes scroll_down {
           0% {
+            -webkit-transform: translateX(-50%) translateY(0);
             transform: translateX(-50%) translateY(0);
           }
 
           50% {
+            -webkit-transform: translateX(-50%) translateY(20px);
             transform: translateX(-50%) translateY(20px);
           }
 
           100% {
+            -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+
+        @keyframes scroll_down {
+          0% {
+            -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+          }
+
+          50% {
+            -webkit-transform: translateX(-50%) translateY(20px);
+            transform: translateX(-50%) translateY(20px);
+          }
+
+          100% {
+            -webkit-transform: translateX(-50%) translateY(0);
             transform: translateX(-50%) translateY(0);
           }
         }
@@ -461,6 +552,8 @@ body {
             width: 40px;
             height: 30px;
             position: absolute;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
             transform: translateX(-50%);
             left: 50%;
             bottom: 0;
@@ -469,21 +562,25 @@ body {
       }
 
       .link_container {
-        flex-wrap: wrap;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
         align-items: stretch;
         gap: 1.875em;
 
         a.cta_link {
+          -ms-flex-preferred-size: calc(50% - 1.875em - 6px);
           flex-basis: calc(50% - 1.875em - 6px);
         }
       }
     }
 
     .last_project_container, .projects_container, .other_projects_container {
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       gap: 1.875em;
 
       & > a.cta_link {
+        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
         max-width: unset;
         text-indent: unset;
@@ -499,6 +596,9 @@ body {
       .last_project, .project, .other_project {
         position: relative;
         overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
 
         &_content_container {
@@ -515,10 +615,18 @@ body {
 
     .stat_container {
       ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
 
         li {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
           gap: .625em;
 
@@ -545,7 +653,10 @@ body {
         padding-bottom: 1.5625em;
 
         li {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+          -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
           border: 3px solid $normal_red_color;
           padding: 1.875em 1.25em;
@@ -561,15 +672,19 @@ body {
 
       .after_and_before_links {
         gap: 1.875em;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
         .slider_button {
           max-width: unset;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1;
 
           &:first-child, &:last-child {
             background-size: 30px 15px;
             text-indent: unset;
+            -ms-flex-preferred-size: calc(50% - 1.875em - 6px);
             flex-basis: calc(50% - 1.875em - 6px);
           }
 
@@ -597,6 +712,9 @@ body {
     }
 
     .goal_and_who_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       gap: 3.125em;
 
@@ -613,15 +731,24 @@ body {
       }
 
       div.flex_container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         margin-top: 1.875em;
       }
     }
 
     .shops_container, .houses_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
       .house, .shop {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
 
         &:not(:last-of-type) {
@@ -644,6 +771,7 @@ body {
       .shop {
         .address_and_schedule_container {
           border-bottom: 1px solid $white_color;
+          -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 
           .address_container {
@@ -656,10 +784,16 @@ body {
           }
 
           .address_container, .schedule_container {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             row-gap: 1.875em;
             padding-bottom: 1.875em;
+            -ms-flex-preferred-size: calc(100% / 2 - 1.25em - 1px);
             flex-basis: calc(100% / 2 - 1.25em - 1px);
+            -webkit-box-pack: unset;
+            -ms-flex-pack: unset;
             justify-content: unset;
 
             .cta_link {
@@ -674,6 +808,7 @@ body {
             text-align: center;
             font-family: 'SofiaPro-Bold-Italic', 'Arial-Bold-Italic', 'Helvetica-Bold-Italic', sans-serif;
             font-style: italic;
+            -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
           }
         }
@@ -681,6 +816,9 @@ body {
     }
 
     .phone_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       gap: 3.125em;
 
@@ -693,6 +831,9 @@ body {
     .mail_container {
       form {
         margin-top: 3.125em;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 3.125em;
 
@@ -712,6 +853,22 @@ body {
               border-color: $white_color;
               outline: 1px solid $white_color;
               border-radius: .625em;
+            }
+
+            &::-webkit-input-placeholder {
+              color: rgba(255, 255, 255, .5);
+            }
+
+            &::-moz-placeholder {
+              color: rgba(255, 255, 255, .5);
+            }
+
+            &:-ms-input-placeholder {
+              color: rgba(255, 255, 255, .5);
+            }
+
+            &::-ms-input-placeholder {
+              color: rgba(255, 255, 255, .5);
             }
 
             &::placeholder {
@@ -771,6 +928,9 @@ body {
     }
 
     .ln_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
       .section {
@@ -815,6 +975,8 @@ body {
 @media (width >= 800px) {
   .cta_link {
     &:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
       transform: scale(1.05);
     }
   }
@@ -822,9 +984,12 @@ body {
     main {
       .home_hero_container {
         .link_container {
+          -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 
           a.cta_link {
+            -ms-flex-preferred-size: 33%;
             flex-basis: 33%;
           }
         }
@@ -832,25 +997,37 @@ body {
 
       .contact_and_support_us_container {
         .link_container {
+          -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 
           a.cta_link {
             width: 33%;
+            -ms-flex-preferred-size: unset;
             flex-basis: unset;
+            -webkit-box-flex: unset;
+            -ms-flex-positive: unset;
             flex-grow: unset;
           }
         }
       }
 
       .last_project_container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
 
         .last_project {
+          -ms-flex-preferred-size: calc(100% / 3 - 1.875em);
           flex-basis: calc(100% / 3 - 1.875em);
         }
 
         a.cta_link {
+          -ms-flex-preferred-size: 25%;
           flex-basis: 25%;
           text-align: left;
           background-position: calc(100% - .5em);
@@ -860,6 +1037,8 @@ body {
       .last_project_container, .projects_container {
         .last_project, .project {
           .image_container {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
             flex-grow: 1;
           }
         }
@@ -867,10 +1046,17 @@ body {
 
       .stat_container {
         ul {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 
           li {
+            -webkit-box-pack: unset;
+            -ms-flex-pack: unset;
             justify-content: unset;
           }
         }
@@ -890,6 +1076,8 @@ body {
             &:first-of-type, &:last-of-type {
               position: absolute;
               top: 50%;
+              -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
               transform: translateY(-50%);
               width: 22%;
             }
@@ -906,6 +1094,9 @@ body {
       }
 
       .goal_and_who_container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         gap: unset;
 
@@ -916,10 +1107,17 @@ body {
 
       .houses_container {
         div.flex_container {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
 
           .house {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
+            -ms-flex-preferred-size: calc(50% - 1.875em);
             flex-basis: calc(50% - 1.875em);
           }
         }
@@ -927,12 +1125,19 @@ body {
 
       .shops_container {
         .shop {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
           gap: 1.875em;
           width: 100%;
 
           &:nth-of-type(even) {
+            -ms-flex-item-align: end;
             align-self: flex-end;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
           }
 
@@ -941,10 +1146,16 @@ body {
           }
 
           .address_and_schedule_container {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
             flex-grow: 1;
             border: 0;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             gap: 1.875em;
+            -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
 
             h3 {
@@ -957,6 +1168,7 @@ body {
               border: 0;
 
               .cta_link {
+                -ms-flex-preferred-size: unset;
                 flex-basis: unset;
                 max-width: 33%;
               }
@@ -966,6 +1178,7 @@ body {
       }
 
       .projects_container, .project_container ul {
+        -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
       }
 
@@ -976,10 +1189,32 @@ body {
       }
 
       .other_projects_container {
+        -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
 
         .image_container {
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1;
+        }
+      }
+
+      .ln_container {
+        section {
+          h2, p {
+            max-width: 50%;
+          }
+
+          &:nth-of-type(even) {
+            p, h2 {
+              margin: auto 0 auto auto;
+            }
+
+            h2 {
+              margin-bottom: 1.25em;
+            }
+
+          }
         }
       }
     }
@@ -987,6 +1222,9 @@ body {
     footer {
       .footer_container {
         .secondary_nav {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
         }
       }
