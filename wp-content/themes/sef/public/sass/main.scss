@@ -421,10 +421,38 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   }
 }
 
+.form_feedback, .form_error {
+  padding: 1.5em;
+  color: $white_color;
+  position: fixed;
+  border-radius: .5em;
+  right: $section_left_right_padding;
+  transition: .7s ease-in-out;
+  opacity: 1;
+  top: -300px;
+}
+
+.form_error{
+  background-color: $dark_red_color;
+}
+
+.form_feedback {
+  background-color: $green_color;
+}
+
+.disappear {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
 body {
   font-family: 'SofiaPro-Regular', 'Helvetica-Roman', 'Arial-Regular', sans-serif;
 
-  h2, h3, h4, .cta_link {
+  .field_error {
+    margin-top: 1.25em;
+  }
+
+  h2, h3, h4, .cta_link, .field_error {
     font-family: 'SofiaPro-Bold', 'Helvetica-Bold', 'Arial-Bold', sans-serif;
     font-weight: bold;
   }
@@ -442,7 +470,7 @@ body {
     }
   }
 
-  h3, h4, .cta_link {
+  h3, h4, .cta_link, .field_error, .form_error, .form_feedback {
     font-size: 1.25em;
   }
 

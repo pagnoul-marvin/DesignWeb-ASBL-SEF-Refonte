@@ -7,8 +7,8 @@ export const settings = {
     sliderElement: document.getElementById('slider'),
     sliderLiElement: document.querySelector('.slider_element'),
     noJsBannerElement: document.getElementById('no_js_banner'),
-    validateDivElement: document.querySelector('.form_feedback'),
-    notValidateDivElement: document.querySelector('.form_error'),
+    validateDivElement: document.getElementById('validate'),
+    notValidateDivElement: document.getElementById('not_validate'),
     sectionElements: document.querySelectorAll('section'),
 
 

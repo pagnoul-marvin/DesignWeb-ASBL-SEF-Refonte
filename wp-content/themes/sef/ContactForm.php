@@ -34,9 +34,7 @@ class ContactForm
             $this->sendInDatabase();
             wp_redirect(add_query_arg('status', 'success', home_url('/nous-contacter/')));
         } else {
-            if (!session_id()) {
-                session_start();
-            }
+            session_start();
             $_SESSION['form_errors'] = $this->errors;
             wp_redirect(add_query_arg('status', 'error', home_url('/nous-contacter/')));
         }

@@ -366,10 +366,37 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
   border-radius: 0.625em;
 }
 
+.form_feedback, .form_error {
+  padding: 1.5em;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  border-radius: 0.5em;
+  right: 1.25em;
+  transition: 0.7s ease-in-out;
+  opacity: 1;
+  top: -300px;
+}
+
+.form_error {
+  background-color: #712424;
+}
+
+.form_feedback {
+  background-color: #27a03f;
+}
+
+.disappear {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
 body {
   font-family: "SofiaPro-Regular", "Helvetica-Roman", "Arial-Regular", sans-serif;
 }
-body h2, body h3, body h4, body .cta_link {
+body .field_error {
+  margin-top: 1.25em;
+}
+body h2, body h3, body h4, body .cta_link, body .field_error {
   font-family: "SofiaPro-Bold", "Helvetica-Bold", "Arial-Bold", sans-serif;
   font-weight: bold;
 }
@@ -383,7 +410,7 @@ body h2.main_title {
 body h2.secondary_title {
   margin-bottom: 1.25em;
 }
-body h3, body h4, body .cta_link {
+body h3, body h4, body .cta_link, body .field_error, body .form_error, body .form_feedback {
   font-size: 1.25em;
 }
 body main .contact_and_support_us_container .link_container {

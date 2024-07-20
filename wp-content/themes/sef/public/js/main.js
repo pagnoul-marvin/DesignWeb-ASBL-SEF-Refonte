@@ -10,7 +10,7 @@ const sef = {
         this.noJs();
         this.initSliderElements();
         this.addEventListeners();
-        //this.disappearDivElements();
+        this.disappearDivElements();
     },
 
     addEventListeners() {
@@ -84,18 +84,16 @@ const sef = {
         });
     },
 
-    /*disappearDivElements() {
+    disappearDivElements() {
         setTimeout(function () {
 
             if (settings.validateDivElement) {
                 settings.validateDivElement.classList.add('disappear');
-            }
-            if (settings.notValidateDivElement) {
+            } else if (settings.notValidateDivElement) {
                 settings.notValidateDivElement.classList.add('disappear');
             }
         }, settings.timeBeforeDivElementsDisappear);
     },
-     */
 }
 
 sef.init();

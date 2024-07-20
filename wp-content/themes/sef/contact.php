@@ -10,12 +10,12 @@ $contact_phone = new WP_Query([
 
 if (isset($_GET['status'])) {
     if ($_GET['status'] === 'error') {
+        session_start();
         if (session_id()) {
             $errors = $_SESSION['form_errors'] ?? null;
         }
     }
 }
-
 ?>
 
     <main>
@@ -50,16 +50,6 @@ if (isset($_GET['status'])) {
         <section class="section dark_red_section">
 
             <h2 class="secondary_title">Par mail</h2>
-
-            <?php if (isset($_GET['status']) && $_GET['status'] === 'error' && !empty($errors)): ?>
-                <div class="form_error">
-                    <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de vérifier.</p>
-                </div>
-            <?php elseif ( isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-                <div class="form_feedback">
-                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
-                </div>
-            <?php endif; ?>
 
             <div class="mail_container">
 
@@ -113,6 +103,16 @@ if (isset($_GET['status'])) {
                     <input type="hidden" name="action" value="custom_contact_form">
 
                     <input type="submit" value="Soumettre" class="cta_link dark_link">
+
+                    <?php if (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
+                        <div class="form_error" id="validate">
+                            <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de v&eacute;rifier.</p>
+                        </div>
+                    <?php elseif (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+                        <div class="form_feedback" id="not_validate">
+                            <p>Merci&nbsp;! Votre message a bien &eacute;t&eacute; envoy&eacute;.</p>
+                        </div>
+                    <?php endif; ?>
 
                 </form>
 
