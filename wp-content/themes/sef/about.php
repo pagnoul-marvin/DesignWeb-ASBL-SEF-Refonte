@@ -40,7 +40,7 @@ $about_shops = new WP_Query([
 
             <?php if ($about_goal_and_who->have_posts()) : while ($about_goal_and_who->have_posts()) :$about_goal_and_who->the_post() ?>
 
-                <article>
+                <article itemprop="description">
 
                     <?php if (get_field('about_who_and_goal_title_first')): ?>
 

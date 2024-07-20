@@ -24,7 +24,7 @@ $projects = new WP_Query([
 
                 <?php if ($projects->have_posts()) : while ($projects->have_posts()) :$projects->the_post() ?>
 
-                    <article class="project flex_container">
+                    <article class="project flex_container" itemprop="event" itemscope itemtype="https://schema.org/Event">
 
                         <div class="image_container">
 
@@ -37,7 +37,7 @@ $projects = new WP_Query([
 
                         <div class="last_project_content_container">
 
-                            <h3><?= get_field('project_title') ?></h3>
+                            <h3 itemprop="about"><?= get_field('project_title') ?></h3>
 
                             <time datetime="<?= get_the_modified_time('c'); ?>"><?= get_the_modified_time('d F Y') ?></time>
 

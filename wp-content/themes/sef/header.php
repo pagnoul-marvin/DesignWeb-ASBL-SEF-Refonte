@@ -13,7 +13,7 @@
     <script type="module" src="<?= dw_asset('js/main.js') ?>"></script>
     <title>ASBL SEF &ndash; <?= get_the_title() ?></title>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/Organization">
 <header>
 
     <div class="main_nav_container">

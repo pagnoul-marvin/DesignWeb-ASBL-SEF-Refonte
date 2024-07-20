@@ -713,6 +713,10 @@ body {
               outline: 1px solid $white_color;
               border-radius: .625em;
             }
+
+            &::placeholder {
+              color: rgba(255, 255, 255, .5);
+            }
           }
         }
       }

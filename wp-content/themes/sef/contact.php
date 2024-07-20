@@ -30,7 +30,7 @@ $contact_phone = new WP_Query([
 
                     <p><?= get_field('phone_text') ?></p>
 
-                    <a class="cta_link light_link" href="<?= get_field('phone_link')['url'] ?>"
+                    <a itemprop="telephone" class="cta_link light_link" href="<?= get_field('phone_link')['url'] ?>"
                        title="Téléphoner"><?= get_field('phone_link')['title'] ?></a>
 
                 </div>

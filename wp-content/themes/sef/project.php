@@ -47,13 +47,13 @@ $other_projects = new WP_Query([
 
     <?php dw_component('no_js_banner'); ?>
 
-    <article class="section">
+    <article class="section" itemprop="event" itemscope itemtype="https://schema.org/Event">
 
         <div class="project_container">
 
             <?php if ($project->have_posts()) : while ($project->have_posts()) :$project->the_post() ?>
 
-                <h2 class="main_title"><?= get_field('project_title') ?></h2>
+                <h2 class="main_title" itemprop="about"><?= get_field('project_title') ?></h2>
 
                 <p><?= get_field('project_description') ?></p>
 
@@ -118,7 +118,7 @@ $other_projects = new WP_Query([
 
             <?php if ($other_projects->have_posts()) : while ($other_projects->have_posts()) :$other_projects->the_post() ?>
 
-                <article class="other_project flex_container">
+                <article class="other_project flex_container" itemprop="event" itemscope itemtype="https://schema.org/Event">
 
                     <div class="image_container">
 
@@ -131,7 +131,7 @@ $other_projects = new WP_Query([
 
                     <div class="last_project_content_container">
 
-                        <h3><?= get_field('project_title') ?></h3>
+                        <h3 itemprop="about"><?= get_field('project_title') ?></h3>
 
                         <time datetime="<?= get_the_modified_time('c'); ?>"><?= get_the_modified_time('d F Y') ?></time>
 

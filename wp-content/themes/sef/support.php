@@ -31,7 +31,7 @@ $support_material = new WP_Query([
 
         <h2 class="secondary_title">Financi&egrave;rement</h2>
 
-        <div class="financial_donation_container">
+        <div class="financial_donation_container" itemprop="description">
 
             <?php if ($support_financial->have_posts()) : while ($support_financial->have_posts()) :$support_financial->the_post() ?>
 
@@ -58,7 +58,7 @@ $support_material = new WP_Query([
 
         <h2 class="secondary_title">Dons mat&eacute;riels</h2>
 
-        <div class="material_donation_container">
+        <div class="material_donation_container" itemprop="description">
 
             <?php if ($support_material->have_posts()) : while ($support_material->have_posts()) :$support_material->the_post() ?>
 

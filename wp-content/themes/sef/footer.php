@@ -30,8 +30,8 @@
                 <ul class="flex_container">
 
                     <?php foreach (dw_get_navigation_links('socials') as $link): ?>
-                        <li class="socials_nav_item">
-                            <a class="socials_nav_item_link logo_link" href="<?= $link->url ?>"
+                        <li class="socials_nav_item" itemprop="sameAs" itemscope itemtype="https://schema.org/URL">
+                            <a itemprop="url" class="socials_nav_item_link logo_link" href="<?= $link->url ?>"
                                title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
                         </li>
                     <?php endforeach; ?>
@@ -83,7 +83,7 @@
 
                         <?php if (get_field('contact_navigation_link')): ?>
 
-                            <li class="contact_nav_item">
+                            <li class="contact_nav_item" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
                                 <a class="contact_nav_item_link normal_link" title="Contacter"
                                    href="<?= get_field('contact_navigation_link')['url'] ?>">
                                     <?= get_field('contact_navigation_link')['title'] ?>

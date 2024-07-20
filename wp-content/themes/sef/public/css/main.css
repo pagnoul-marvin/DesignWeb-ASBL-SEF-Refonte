@@ -576,6 +576,9 @@ body main .mail_container form div input:focus, body main .mail_container form d
   outline: 1px solid rgb(255, 255, 255);
   border-radius: 0.625em;
 }
+body main .mail_container form div input::placeholder, body main .mail_container form div textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 body main .financial_donation_container p:first-of-type, body main .material_donation_container p:first-of-type {
   margin-bottom: 1.875em;
 }

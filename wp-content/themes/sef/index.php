@@ -54,7 +54,7 @@ $home_testimonials = new WP_Query([
 
                     </h2>
 
-                    <p class="catchphrase">
+                    <p class="catchphrase" itemprop="slogan">
 
                         <?= get_field('home_hero_section_catchphrase_started') ?>
 
@@ -102,7 +102,7 @@ $home_testimonials = new WP_Query([
 
                 <?php if ($home_last_projects->have_posts()) : while ($home_last_projects->have_posts()) :$home_last_projects->the_post() ?>
 
-                    <article class="last_project flex_container">
+                    <article class="last_project flex_container" itemprop="event" itemscope itemtype="https://schema.org/Event">
 
                         <div class="image_container">
 
@@ -115,7 +115,7 @@ $home_testimonials = new WP_Query([
 
                         <div class="last_project_content_container">
 
-                            <h3><?= get_field('project_title') ?></h3>
+                            <h3 itemprop="about"><?= get_field('project_title') ?></h3>
 
                             <time datetime="<?= get_the_modified_time('c'); ?>"><?= get_the_modified_time('d F Y') ?></time>
 
@@ -178,7 +178,7 @@ $home_testimonials = new WP_Query([
 
         </section>
 
-        <section class="section light_red_section">
+        <section class="section light_red_section" itemprop="review" itemscope itemtype="https://schema.org/Review">
 
             <h2 class="secondary_title">Quelques t&eacute;moignages</h2>
 
@@ -188,7 +188,7 @@ $home_testimonials = new WP_Query([
 
                     <?php if ($home_testimonials->have_posts()) : while ($home_testimonials->have_posts()) :$home_testimonials->the_post() ?>
 
-                        <li class="slider_element">
+                        <li class="slider_element" itemprop="reviewBody">
 
                             <h3><?= get_field('home_testimonial_person') ?></h3>
 
