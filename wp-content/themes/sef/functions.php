@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory().'/ContactForm.php';
+
 add_filter('use_block_editor_for_post', '__return_false');
 
 register_nav_menu('main', 'Navigation principale, en-tête du site');
@@ -49,4 +51,55 @@ function dw_component(string $component, array $arguments = []): void
     extract($arguments);
 
     include($path);
+}
+
+function dw_contact_form_controller(): void
+{
+    new \DW\ContactForm($_POST);
+}
+
+add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
+add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
+
+
+function add_contact_form_menu(): void
+{
+    add_menu_page(
+        'Entrées du Formulaire de Contact',
+        'Formulaires de Contact',
+        'manage_options',
+        'contact_form_entries',
+        'display_contact_form_entries',
+        'dashicons-email',
+        2
+    );
+}
+add_action('admin_menu', 'add_contact_form_menu');
+
+function display_contact_form_entries(): void
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form_entries';
+
+    $entries = $wpdb->get_results("SELECT * FROM $table_name ORDER BY `created_at` DESC");
+
+    echo '<div class="wrap">';
+    echo '<h1>Entrées du Formulaire de Contact</h1>';
+    echo '<table class="wp-list-table widefat fixed striped">';
+    echo '<thead><tr><th>ID</th><th>Prénom</th><th>Nom</th><th>Email</th><th>Message</th></tr></thead>';
+    echo '<tbody>';
+
+    foreach ($entries as $entry) {
+        echo '<tr>';
+        echo '<td>' . esc_html($entry->id) . '</td>';
+        echo '<td>' . esc_html($entry->firstname) . '</td>';
+        echo '<td>' . esc_html($entry->lastname) . '</td>';
+        echo '<td>' . esc_html($entry->email) . '</td>';
+        echo '<td>' . esc_html($entry->message) . '</td>';
+        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '</table>';
+    echo '</div>';
 }

@@ -8,6 +8,14 @@ $contact_phone = new WP_Query([
     'posts_per_page' => 1,
 ]);
 
+if (isset($_GET['status'])) {
+    if ($_GET['status'] === 'error') {
+        if (session_id()) {
+            $errors = $_SESSION['form_errors'] ?? null;
+        }
+    }
+}
+
 ?>
 
     <main>
@@ -43,6 +51,16 @@ $contact_phone = new WP_Query([
 
             <h2 class="secondary_title">Par mail</h2>
 
+            <?php if (isset($_GET['status']) && $_GET['status'] === 'error' && !empty($errors)): ?>
+                <div class="form_error">
+                    <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de vérifier.</p>
+                </div>
+            <?php elseif ( isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+                <div class="form_feedback">
+                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+                </div>
+            <?php endif; ?>
+
             <div class="mail_container">
 
                 <p>Les champs dot&eacute;s d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
@@ -54,6 +72,9 @@ $contact_phone = new WP_Query([
                         <label for="firstname">Votre pr&eacute;nom&ast;&nbsp;: <small>255 caract&egrave;res
                                 maximum</small></label>
                         <input placeholder="Ex: Jean" id="firstname" name="firstname" required type="text">
+                        <?php if ($errors['firstname'] ?? null): ?>
+                            <p class="field_error"><?= $errors['firstname'] ?></p>
+                        <?php endif; ?>
 
                     </div>
 
@@ -61,6 +82,9 @@ $contact_phone = new WP_Query([
 
                         <label for="lastname">Votre nom&ast;&nbsp;: <small>255 caract&egrave;res maximum</small></label>
                         <input placeholder="Ex: Dupont" id="lastname" name="lastname" required type="text">
+                        <?php if ($errors['lastname'] ?? null): ?>
+                            <p class="field_error"><?= $errors['lastname'] ?></p>
+                        <?php endif; ?>
 
                     </div>
 
@@ -68,6 +92,9 @@ $contact_phone = new WP_Query([
 
                         <label for="email">Votre adresse mail&ast;&nbsp;: <small>Doit &ecirc;tre valide</small></label>
                         <input placeholder="Ex: jean@dupont.com" id="email" name="email" required type="text">
+                        <?php if ($errors['email'] ?? null): ?>
+                            <p class="field_error"><?= $errors['email'] ?></p>
+                        <?php endif; ?>
 
                     </div>
 
@@ -75,9 +102,15 @@ $contact_phone = new WP_Query([
                     <div>
 
                         <label for="message">Votre message&ast;&nbsp;:</label>
-                        <textarea placeholder="Ex: Je souhaite vous contacter pour ..." name="message" id="message" cols="30" rows="10" required></textarea>
+                        <textarea placeholder="Ex: Je souhaite vous contacter pour ..." name="message" id="message"
+                                  cols="30" rows="10" required></textarea>
+                        <?php if ($errors['message'] ?? null): ?>
+                            <p class="field_error"><?= $errors['message'] ?></p>
+                        <?php endif; ?>
 
                     </div>
+
+                    <input type="hidden" name="action" value="custom_contact_form">
 
                     <input type="submit" value="Soumettre" class="cta_link dark_link">
 
