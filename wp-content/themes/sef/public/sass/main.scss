@@ -76,6 +76,11 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
     background-color: $white_color;
     color: $dark_red_color;
     border-color: $white_color;
+
+    &:hover {
+      color: $white_color;
+      background-color: transparent;
+    }
   }
 }
 
@@ -432,7 +437,7 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   top: -300px;
 }
 
-.form_error{
+.form_error {
   background-color: $dark_red_color;
 }
 
@@ -1094,7 +1099,7 @@ body {
         position: relative;
 
         ul {
-          width: 50%;
+          width: 35%;
           margin: 0 auto;
         }
 
@@ -1107,15 +1112,15 @@ body {
               -webkit-transform: translateY(-50%);
               -ms-transform: translateY(-50%);
               transform: translateY(-50%);
-              width: 22%;
+              width: 8em;
             }
 
             &:first-of-type {
-              left: 0;
+              left: 8em;
             }
 
             &:last-of-type {
-              right: 0;
+              right: 8em;
             }
           }
         }
@@ -1210,7 +1215,7 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
       }
 
-      .material_donation_container, .phone_container, .mail_container {
+      .material_donation_container, .phone_container {
         a.cta_link, .cta_link {
           width: 20%;
         }
@@ -1242,6 +1247,19 @@ body {
               margin-bottom: 1.25em;
             }
 
+          }
+        }
+      }
+
+      .mail_container {
+        form {
+          display: -ms-grid;
+          display: grid;
+          -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+
+          .cta_link {
+            width: 33%;
           }
         }
       }

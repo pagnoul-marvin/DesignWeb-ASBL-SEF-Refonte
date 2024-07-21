@@ -93,7 +93,7 @@ if (isset($_GET['status'])) {
 
                         <label for="message">Votre message&ast;&nbsp;:</label>
                         <textarea placeholder="Ex: Je souhaite vous contacter pour ..." name="message" id="message"
-                                  cols="30" rows="10" required></textarea>
+                                  required></textarea>
                         <?php if ($errors['message'] ?? null): ?>
                             <p class="field_error"><?= $errors['message'] ?></p>
                         <?php endif; ?>

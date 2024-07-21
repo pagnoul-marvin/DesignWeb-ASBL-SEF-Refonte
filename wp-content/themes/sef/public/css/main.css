@@ -66,6 +66,10 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
   color: #712424;
   border-color: rgb(255, 255, 255);
 }
+.cta_link.dark_link:hover {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
 
 .centered, .cta_link {
   text-align: center;
@@ -882,7 +886,7 @@ body main .ln_container .section:nth-of-type(odd) {
     position: relative;
   }
   body main .testimonial_container ul {
-    width: 50%;
+    width: 35%;
     margin: 0 auto;
   }
   body main .testimonial_container .after_and_before_links .slider_button:first-of-type, body main .testimonial_container .after_and_before_links .slider_button:last-of-type {
@@ -891,13 +895,13 @@ body main .ln_container .section:nth-of-type(odd) {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    width: 22%;
+    width: 8em;
   }
   body main .testimonial_container .after_and_before_links .slider_button:first-of-type {
-    left: 0;
+    left: 8em;
   }
   body main .testimonial_container .after_and_before_links .slider_button:last-of-type {
-    right: 0;
+    right: 8em;
   }
   body main .goal_and_who_container {
     -webkit-box-orient: horizontal;
@@ -972,7 +976,7 @@ body main .ln_container .section:nth-of-type(odd) {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  body main .material_donation_container a.cta_link, body main .material_donation_container .cta_link, body main .phone_container a.cta_link, body main .phone_container .cta_link, body main .mail_container a.cta_link, body main .mail_container .cta_link {
+  body main .material_donation_container a.cta_link, body main .material_donation_container .cta_link, body main .phone_container a.cta_link, body main .phone_container .cta_link {
     width: 20%;
   }
   body main .other_projects_container {
@@ -992,6 +996,15 @@ body main .ln_container .section:nth-of-type(odd) {
   }
   body main .ln_container section:nth-of-type(even) h2 {
     margin-bottom: 1.25em;
+  }
+  body main .mail_container form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  body main .mail_container form .cta_link {
+    width: 33%;
   }
   body footer .footer_container .secondary_nav {
     -webkit-box-orient: horizontal;
