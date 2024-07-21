@@ -1221,6 +1221,22 @@ body {
         }
       }
 
+      .material_donation_container, .left_aligned {
+        margin: 0 0 0 auto;
+
+        a.cta_link {
+          width: 33%;
+        }
+      }
+
+      .left_aligned {
+        margin-bottom: 1.25em;
+      }
+
+      .financial_donation_container, .material_donation_container, .left_aligned {
+        max-width: 50%;
+      }
+
       .other_projects_container {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;

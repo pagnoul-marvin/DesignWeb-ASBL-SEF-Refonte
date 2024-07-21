@@ -56,7 +56,7 @@ $support_material = new WP_Query([
 
     <section class="section dark_red_section">
 
-        <h2 class="secondary_title">Dons mat&eacute;riels</h2>
+        <h2 class="secondary_title left_aligned">Dons mat&eacute;riels</h2>
 
         <div class="material_donation_container" itemprop="description">
 

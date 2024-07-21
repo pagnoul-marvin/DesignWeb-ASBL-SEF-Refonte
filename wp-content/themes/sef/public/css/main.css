@@ -979,6 +979,18 @@ body main .ln_container .section:nth-of-type(odd) {
   body main .material_donation_container a.cta_link, body main .material_donation_container .cta_link, body main .phone_container a.cta_link, body main .phone_container .cta_link {
     width: 20%;
   }
+  body main .material_donation_container, body main .left_aligned {
+    margin: 0 0 0 auto;
+  }
+  body main .material_donation_container a.cta_link, body main .left_aligned a.cta_link {
+    width: 33%;
+  }
+  body main .left_aligned {
+    margin-bottom: 1.25em;
+  }
+  body main .financial_donation_container, body main .material_donation_container, body main .left_aligned {
+    max-width: 50%;
+  }
   body main .other_projects_container {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
