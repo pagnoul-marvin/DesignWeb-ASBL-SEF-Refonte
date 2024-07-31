@@ -370,6 +370,10 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
   border-radius: 0.625em;
 }
 
+.error_text {
+  margin-bottom: 1.875em;
+}
+
 .form_feedback, .form_error {
   padding: 1.5em;
   color: rgb(255, 255, 255);

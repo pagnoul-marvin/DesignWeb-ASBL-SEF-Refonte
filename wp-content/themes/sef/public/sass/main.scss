@@ -426,6 +426,10 @@ a, label[for="burger_menu"], input[type="submit"], .slider_button {
   }
 }
 
+.error_text {
+  margin-bottom: 1.875em;
+}
+
 .form_feedback, .form_error {
   padding: 1.5em;
   color: $white_color;
