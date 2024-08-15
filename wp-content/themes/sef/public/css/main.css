@@ -380,6 +380,8 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
   position: fixed;
   border-radius: 0.5em;
   right: 1.25em;
+  -webkit-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
   transition: 0.7s ease-in-out;
   opacity: 1;
   top: -400px;
@@ -394,6 +396,8 @@ a:hover, label[for=burger_menu]:hover, input[type=submit]:hover, .slider_button:
 }
 
 .disappear {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
   transform: translateX(100%);
   opacity: 0;
 }
@@ -428,27 +432,12 @@ body main .contact_and_support_us_container .link_container {
 }
 body main .contact_and_support_us_container .link_container a.cta_link {
   text-indent: unset;
-  background-size: 30px 15px;
-  text-align: left;
   max-width: unset;
   -ms-flex-preferred-size: calc(50% - 1.875em - 6px);
   flex-basis: calc(50% - 1.875em - 6px);
-  background-position: 90%;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-body main .contact_and_support_us_container .link_container a.cta_link:first-of-type {
-  background-image: url("../../resources/images/right_arrow_hover.svg");
-}
-body main .contact_and_support_us_container .link_container a.cta_link:first-of-type:hover {
-  background-image: url("../../resources/images/right_arrow.svg");
-}
-body main .contact_and_support_us_container .link_container a.cta_link:last-of-type {
-  background-image: url("../../resources/images/right_arrow.svg");
-}
-body main .contact_and_support_us_container .link_container a.cta_link:last-of-type:hover {
-  background-image: url("../../resources/images/right_arrow_hover.svg");
 }
 body main .home_hero_container {
   position: relative;
@@ -528,19 +517,16 @@ body main .home_hero_container .link_container a.cta_link {
 body main .last_project_container, body main .projects_container, body main .other_projects_container {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 1.875em;
+  gap: 3em 1.875em;
 }
-body main .last_project_container > a.cta_link, body main .projects_container > a.cta_link, body main .other_projects_container > a.cta_link {
+body main .last_project_container > div, body main .projects_container > div, body main .other_projects_container > div {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
+}
+body main .last_project_container > div a.cta_link, body main .projects_container > div a.cta_link, body main .other_projects_container > div a.cta_link {
   max-width: unset;
   text-indent: unset;
-  background-image: url("../../resources/images/right_arrow.svg");
-  background-size: 30px 15px;
-  background-position: 80% center;
-}
-body main .last_project_container > a.cta_link:hover, body main .projects_container > a.cta_link:hover, body main .other_projects_container > a.cta_link:hover {
-  background-image: url("../../resources/images/right_arrow_hover.svg");
+  width: calc(100% - 1em);
 }
 body main .last_project_container .last_project, body main .last_project_container .project, body main .last_project_container .other_project, body main .projects_container .last_project, body main .projects_container .project, body main .projects_container .other_project, body main .other_projects_container .last_project, body main .other_projects_container .project, body main .other_projects_container .other_project {
   position: relative;
@@ -614,26 +600,9 @@ body main .testimonial_container .after_and_before_links .slider_button {
   flex-grow: 1;
 }
 body main .testimonial_container .after_and_before_links .slider_button:first-child, body main .testimonial_container .after_and_before_links .slider_button:last-child {
-  background-size: 30px 15px;
   text-indent: unset;
   -ms-flex-preferred-size: calc(50% - 1.875em - 6px);
   flex-basis: calc(50% - 1.875em - 6px);
-}
-body main .testimonial_container .after_and_before_links .slider_button:first-child {
-  background-image: url("../../resources/images/left_arrow.svg");
-  text-align: right;
-  background-position: 10%;
-}
-body main .testimonial_container .after_and_before_links .slider_button:first-child:hover {
-  background-image: url("../../resources/images/left_arrow_hover.svg");
-}
-body main .testimonial_container .after_and_before_links .slider_button:last-child {
-  background-image: url("../../resources/images/right_arrow.svg");
-  text-align: left;
-  background-position: 80%;
-}
-body main .testimonial_container .after_and_before_links .slider_button:last-child:hover {
-  background-image: url("../../resources/images/right_arrow_hover.svg");
 }
 body main .goal_and_who_container {
   -webkit-box-orient: vertical;
@@ -727,11 +696,11 @@ body main .phone_container .cta_link {
 }
 body main .mail_container form {
   margin-top: 3.125em;
+  gap: 3.125em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 3.125em;
 }
 body main .mail_container form div input, body main .mail_container form div textarea {
   width: calc(100% - 1.25em);
@@ -861,11 +830,13 @@ body main .ln_container .section:nth-of-type(odd) {
     -ms-flex-preferred-size: calc(33.3333333333% - 1.875em);
     flex-basis: calc(33.3333333333% - 1.875em);
   }
-  body main .last_project_container a.cta_link {
-    -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-    text-align: left;
-    background-position: calc(100% - 0.5em);
+  body main .last_project_container > div {
+    width: 100%;
+    text-align: center;
+  }
+  body main .last_project_container > div a.cta_link {
+    width: 25%;
+    text-indent: unset;
   }
   body main .last_project_container .last_project .image_container, body main .last_project_container .project .image_container, body main .projects_container .last_project .image_container, body main .projects_container .project .image_container {
     -webkit-box-flex: 1;
@@ -885,27 +856,6 @@ body main .ln_container .section:nth-of-type(odd) {
     -webkit-box-pack: unset;
     -ms-flex-pack: unset;
     justify-content: unset;
-  }
-  body main .testimonial_container {
-    position: relative;
-  }
-  body main .testimonial_container ul {
-    width: 35%;
-    margin: 0 auto;
-  }
-  body main .testimonial_container .after_and_before_links .slider_button:first-of-type, body main .testimonial_container .after_and_before_links .slider_button:last-of-type {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 8em;
-  }
-  body main .testimonial_container .after_and_before_links .slider_button:first-of-type {
-    left: 8em;
-  }
-  body main .testimonial_container .after_and_before_links .slider_button:last-of-type {
-    right: 8em;
   }
   body main .goal_and_who_container {
     -webkit-box-orient: horizontal;
@@ -1027,6 +977,29 @@ body main .ln_container .section:nth-of-type(odd) {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+  }
+}
+@media (width >= 1000px) {
+  .testimonial_container {
+    position: relative;
+  }
+  .testimonial_container ul {
+    width: 35%;
+    margin: 0 auto;
+  }
+  .testimonial_container .after_and_before_links .slider_button:first-of-type, .testimonial_container .after_and_before_links .slider_button:last-of-type {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-70%);
+    -ms-transform: translateY(-70%);
+    transform: translateY(-70%);
+    width: 8em;
+  }
+  .testimonial_container .after_and_before_links .slider_button:first-of-type {
+    left: 8em;
+  }
+  .testimonial_container .after_and_before_links .slider_button:last-of-type {
+    right: 8em;
   }
 }
 

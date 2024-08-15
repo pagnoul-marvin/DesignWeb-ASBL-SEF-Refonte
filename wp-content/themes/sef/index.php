@@ -128,8 +128,12 @@ $home_testimonials = new WP_Query([
 
                 <?php endwhile; endif; ?>
 
-                <a class="cta_link light_link logo_link" title="Aller voir tous nos projets"
-                   href="<?= home_url() . '/nos-projets/' ?>">Tous nos projets</a>
+                <div>
+
+                    <a class="cta_link light_link logo_link" title="Aller voir tous nos projets"
+                       href="<?= home_url() . '/nos-projets/' ?>">Tous nos projets</a>
+
+                </div>
 
             </div>
 

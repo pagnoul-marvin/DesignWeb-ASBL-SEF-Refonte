@@ -91,7 +91,7 @@ class ContactForm
         $result = $wpdb->query($sql);
 
         if ($result === false) {
-            wp_redirect(home_url() . 'une-erreur-est-survenue');
+            wp_redirect(home_url() . '/une-erreur-est-survenue/');
             die();
         }
     }

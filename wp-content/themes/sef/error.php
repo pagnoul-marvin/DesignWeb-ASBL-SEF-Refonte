@@ -12,6 +12,8 @@ $error_page = new WP_Query([
 
     <main>
 
+        <?php var_dump(home_url()) ?>
+
         <?php if ($error_page->have_posts()) : while ($error_page->have_posts()) :$error_page->the_post() ?>
 
             <section class="section first_section">
